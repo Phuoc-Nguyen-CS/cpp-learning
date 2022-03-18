@@ -7,20 +7,49 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
-class MyClass {
-    public:
-    int myNum;
-    std::string myString;
+using namespace std;
+
+class Process {
+    
+private:
+    // Create the :
+    int pid; //process id
+    int rt;  //run time
+    int at;  //arrive time
+public:
+    
+    Process(int processId, int runTime, int arriveTime) {
+        pid = processId;
+        rt = runTime;
+        at = arriveTime;
+    }
+    
+    void setPid(int processId) {pid = processId;}
+    
+    int getPid() {return pid;}
+
+    void setRt(int runTime) {rt = runTime;}
+    
+    int getRt() {return rt;}
+    
+    void setAt(int arriveTime) {at = arriveTime;}
+    
+    int getAt() {return at;}
 };
 
 int main() {
-    MyClass myObj; // Creates an object of MyClass
+
+    Process *pid1 = new Process(1,2,3);
+    Process pid2(3,4,5);
     
-    myObj.myNum = 0;
-    myObj.myString = "Hello World";
+    cout << pid1->getRt();
+    cout << pid2.getPid();
     
-    std::cout << myObj.myNum << std::endl << myObj.myString << std::endl;
+    
+    
+    
     
     return 0;
 }
